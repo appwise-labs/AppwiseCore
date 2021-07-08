@@ -41,6 +41,8 @@ public extension Result {
 
 // MARK: - Cancellation
 
+public struct Cancelled: Error {}
+
 public extension Result {
 	/// Returns a new cancelled result.
 	static var cancelled: Result<Success, Error> {
@@ -54,8 +56,6 @@ public extension Result {
 		default: return false
 		}
 	}
-
-	struct Cancelled: Error {}
 }
 
 // MARK: - Other
